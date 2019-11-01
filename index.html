@@ -33,6 +33,8 @@
             const parsed = []
         
             line.forEach((point, c) => {
+              // point is an object containing the red, green and blue from each pixel
+              // c is the index of the column
         
               const r = point.r * (Math.sin(l))
               const g = point.g * (Math.sin(l))

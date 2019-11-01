@@ -32,7 +32,7 @@ const init = async (imageInfo) => {
   plotResult(imageInfo.data, splitted, RECORDED)
 }
 
-const plotResult = (imageData, splitted, signal) => {
+const plotResult = (imageData) => {
   const pixelMatrix = canvasUtils.toMatrix(imageData, originalContext.canvas.width)
 
   const resultMatrix = applySignal(pixelMatrix)
@@ -47,27 +47,7 @@ const multiply = (color, signal) => {
 }
 
 const applySignal = (matrix) => {
-  const res = []
-
-  matrix.forEach((line, l) => {
-    const parsed = []
-    const half = line.length / 2
-
-    line.forEach((point, c) => {
-
-      const r = point.r * (Math.sin(l))
-      const g = point.g * (Math.sin(l))
-      const b = point.b * (Math.sin(l))
-
-      parsed.push({
-        r,
-        g,
-        b,
-      })
-    })
-
-    res.push(parsed)
-  })
+  const res = eval(document.querySelector('.code').value)
 
   return res
 }
@@ -76,7 +56,6 @@ const applySignal = (matrix) => {
   const imageInfo = await loadImage()
 
   document.querySelector('.start').addEventListener('click', async () => {
-    console.log(imageInfo)
     init(imageInfo)
   })
 })()

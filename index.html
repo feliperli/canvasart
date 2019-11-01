@@ -13,11 +13,44 @@
         display: flex;
         flex-direction: row;
       }
+
+      textarea {
+        min-height: 400px;
+        width: 50%;
+      }
     </style>
   </head>
   <div>
     <button class="start">Start!</button>
   </div>
+  <textarea class="code">
+    const res = []
+
+    matrix.forEach((line, l) => {
+      const parsed = []
+  
+      line.forEach((point, c) => {
+  
+        const r = point.r * (Math.sin(l))
+        const g = point.g * (Math.sin(l))
+        const b = point.b * (Math.sin(l))
+  
+        parsed.push({
+          r,
+          g,
+          b,
+        })
+      })
+  
+      res.push(parsed)
+    })
+  
+    res
+  </textarea>
+  <!-- <textarea class="code">
+    const a = 1 + 2
+    a
+  </textarea> -->
   <div class="images">
     <div>
       <h2>original</h2>

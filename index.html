@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <style>
+      button {
+        padding: 20px;
+      }
+
+      canvas {
+        max-width: 500px;
+      }
+
+      .images {
+        display: flex;
+        flex-direction: row;
+      }
+    </style>
+  </head>
+  <div>
+    <button class="start">Start!</button>
+  </div>
+  <div class="images">
+    <div>
+      <h2>original</h2>
+      <canvas id="original"></canvas>
+    </div>
+    <div>
+      <h2>result</h2>
+      <canvas id="result"></canvas>
+    </div>
+  </div>
+  <div>
+    <canvas id="graphs"></canvas>
+  </div>
+  <script src="../utils/canvas-utils.js"></script>
+  <script src="main.js"></script>
+</html>

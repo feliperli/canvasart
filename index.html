@@ -17,40 +17,41 @@
       textarea {
         min-height: 400px;
         width: 50%;
+        font-size: 14px;
       }
     </style>
   </head>
   <div>
-    <button class="start">Start!</button>
+    <button class="start">Plot!</button>
   </div>
-  <textarea class="code">
-    const res = []
-
-    matrix.forEach((line, l) => {
-      const parsed = []
-  
-      line.forEach((point, c) => {
-  
-        const r = point.r * (Math.sin(l))
-        const g = point.g * (Math.sin(l))
-        const b = point.b * (Math.sin(l))
-  
-        parsed.push({
-          r,
-          g,
-          b,
-        })
-      })
-  
-      res.push(parsed)
-    })
-  
-    res
-  </textarea>
-  <!-- <textarea class="code">
-    const a = 1 + 2
-    a
-  </textarea> -->
+  <pre>
+    <code>
+      <textarea class="code" id="code">
+          const res = []
+      
+          matrix.forEach((line, l) => {
+            const parsed = []
+        
+            line.forEach((point, c) => {
+        
+              const r = point.r * (Math.sin(l))
+              const g = point.g * (Math.sin(l))
+              const b = point.b * (Math.sin(l))
+        
+              parsed.push({
+                r,
+                g,
+                b,
+              })
+            })
+        
+            res.push(parsed)
+          })
+        
+          res
+        </textarea>
+    </code>
+  </pre>
   <div class="images">
     <div>
       <h2>original</h2>
@@ -64,6 +65,7 @@
   <div>
     <canvas id="graphs"></canvas>
   </div>
+  <script src="vendor/codemirror.js"></script>
   <script src="../utils/canvas-utils.js"></script>
   <script src="main.js"></script>
 </html>
